@@ -1,0 +1,5 @@
+@EndUserText.label: 'ENA/FIRR form data provider'
+@ObjectModel.leadingEntity.name: '/EACM/C_ENA_FIRR'
+define service /EACM/UI_ENA_FIRR {
+  expose /EACM/C_ENA_FIRR;
+}

@@ -1,0 +1,16 @@
+unmanaged implementation in class /EACM/BP_I_ENA_FIRR unique;
+strict ( 2 );
+
+define behavior for /EACM/I_ENA_FIRR alias EnaFirr
+lock master
+authorization master ( instance )
+{
+  create ( authorization : global );
+  delete;
+
+  field ( readonly ) CompanyCode, FiscalYear, AgentCode, Supplier;
+
+  static action ( authorization : global ) CalculateAndCreatePdfs
+    parameter /EACM/A_ENA_FIRR_CALC_PARAM
+    result [1] $self;
+}
